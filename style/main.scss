@@ -1,27 +1,32 @@
 ---
 ---
-
 $header-height:120px;
 $theOrangeColor:#ff9526;
-
+$theBG:#14829a;
 html,body{
   font-family: 'Quicksand', sans-serif;
-  width:100%;
+  font-weight:100;
+  
   margin:0px;
-  padding:0px;
+  padding:0px 1ex;
+  background:$theBG;
 }
 
 #header
 {
+  
   display:block;
-  height:$header-height;
+  --min-height:$header-height;
   width:100%;
-  background-color: #14829a;
+  background-color: $theBG;
+  position:relative;
   font-family:'Rubik', sans-serif;
+  overflow:hidden;
   >*{
     display:inline-block;
   }
   #logo{
+    float:left;
     background-image:url(https://lukeskywalk3r.github.io/bwg-apexmedia/res/logo_light.png);
     height:$header-height;
     width:$header-height;
@@ -29,11 +34,21 @@ html,body{
     background-size: contain;
   }
   #headline {
-    height:$header-height;
-    font-size: 8rem;
-    font-color:$theOrangeColor;
-    .fl{
-      font-weight:900;
-    }
+    float:left;
+    padding:0px;
+    margin:0px;
+    line-height:$header-height*.9;
+    color:$theOrangeColor;
+    font-size:$header-height*1;
+    $whiteNess:200;
+    text-shadow:0px 0px 1px transparent, 1px 1px 10px rgba($whiteNess,$whiteNess,$whiteNess,.5);
+    
+
+    
   }
+
 }
+  .flf{
+      background:fdarkred;
+    font-weight:600;
+    }
