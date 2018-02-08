@@ -1,0 +1,21 @@
+html,body{
+  font-family: 'Rubik','Quicksand', sans-serif;
+  width:100%;
+}
+
+#header
+{
+  height:120px;
+  width:100%;
+  background-color: #14829a;
+  font-family:'Lobster';
+  .mainhead {
+    font-size: 8rem;
+    span.fl{
+      font-weight:900;
+    }
+  }
+  img{
+    float:left;
+  }
+}
