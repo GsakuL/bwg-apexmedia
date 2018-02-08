@@ -1,21 +1,33 @@
+$header-height:120px;
+$theOrangeColor:#ff9526;
+
 html,body{
-  font-family: 'Rubik','Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   width:100%;
 }
 
 #header
 {
-  height:120px;
+  display:block;
+  height:$header-height;
   width:100%;
   background-color: #14829a;
-  font-family:'Lobster';
-  .mainhead {
+  font-family:'Rubik', sans-serif;
+  >*{
+    display:inline-block;
+  }
+  #logo{
+    background-image:url(https://lukeskywalk3r.github.io/bwg-apexmedia/res/logo_light.png);
+    height:$header-height;
+    width:$header-height;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #headline {
     font-size: 8rem;
-    span.fl{
+    font-color:$theOrangeColor;
+    .fl{
       font-weight:900;
     }
-  }
-  img{
-    float:left;
   }
 }
