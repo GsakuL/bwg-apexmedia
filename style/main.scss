@@ -1,53 +1,71 @@
 ---
----
-$header-height:120px;
-$theOrangeColor:#ff9526;
-$theBG:#14829a;
-html,body{
-  font-family: 'Quicksand', sans-serif;
-  font-weight:100;
-  
-  margin:0px;
-  padding:0px 1ex;
-  background:$theBG;
+---$header-height: 120px;
+$theOrangeColor: #ff9526;
+$theBG: #14829a;
+html,
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 100;
+
+  margin: 0px;
+  padding: 0px;
+  background: lightgray;
 }
 
-#header
-{
-  
-  display:block;
-  width:100%;
-  background-color: $theBG;
-  position:relative;
-  font-family:'Rubik', sans-serif;
-  overflow:hidden;
-  >*{
-    display:inline-block;
+#mainContent {
+  margin: 0 25px;
+  padding: 20px 8px 5px;
+  background: $theBG;
+  :first-child {
+    margin: 0px;
   }
-  #logo{
-    float:left;
-    background-image:url(https://lukeskywalk3r.github.io/bwg-apexmedia/res/logo_light.png);
+}
+#spacer{
+    background-color:transparent;
+  background-image:none;
     height:$header-height;
-    width:$header-height;
+    width:100%;
+    display:block;
+    position:relative;
+  top:0px;
+  left:0px;
+    z-index:-1;
+}
+#header {
+
+  display: block;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  background-color: $theBG;
+  font-family: "Rubik", sans-serif;
+  overflow: hidden;
+  margin: 0px;
+  box-shadow:3px 4px 50px 5px rgba(0,0,0,.5);
+  > * {
+    display: inline-block;
+  }
+  #logo {
+    float: left;
+    background-image: url(https://lukeskywalk3r.github.io/bwg-apexmedia/res/logo_light.png);
+    height: $header-height;
+    width: $header-height;
     background-repeat: no-repeat;
     background-size: contain;
   }
   #headline {
-    float:left;
-    padding:0px;
-    margin:0px;
-    line-height:$header-height*.9;
-    color:$theOrangeColor;
-    font-size:$header-height*1;
-    $whiteNess:200;
-    text-shadow:0px 0px 1px transparent, 1px 1px 10px rgba($whiteNess,$whiteNess,$whiteNess,.5);
-    
-
-    
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    line-height: $header-height*0.9;
+    color: $theOrangeColor;
+    font-size: $header-height*1;
+    $whiteNess: 200;
+    text-shadow: 0px 0px 1px transparent,
+      1px 1px 10px rgba($whiteNess, $whiteNess, $whiteNess, 0.5);
   }
-
 }
-  .flf{
-      background:fdarkred;
-    font-weight:600;
-    }
+.flf {
+  font-weight: 600;
+}
