@@ -11,7 +11,9 @@ html,body{
   font-family:'Lobster';
   .mainhead {
     font-size: 8rem;
-    
+    span.fl{
+      font-weight:900;
+    }
   }
   img{
     float:left;
