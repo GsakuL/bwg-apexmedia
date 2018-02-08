@@ -24,6 +24,7 @@ html,body{
     background-size: contain;
   }
   #headline {
+    height:$header-height;
     font-size: 8rem;
     font-color:$theOrangeColor;
     .fl{
