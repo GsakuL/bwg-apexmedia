@@ -4,32 +4,40 @@
 $header-height: 120px;
 $theOrangeColor: #ff9526;
 $theBG: #14829a;
+
+@mixin prefix($property, $parameters...) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+    #{$prefix}#{$property}: $parameters;
+  }
+}
+
 html,
 body {
   font-family: "Quicksand", sans-serif;
   font-weight: 100;
-
+  $text-grey-ness: 256;
+  color: darken(rgb($text-grey-ness, $text-grey-ness, $text-grey-ness), 20%);
   margin: 0px;
   padding: 0px;
   background: lightgray;
 }
 
 #mainContent {
-  margin: 0 25px 20px;
+  margin: 0 25px;
   padding: ($header-height + 5px) 8px 5px;
   background: $theBG;
 }
 #header {
   display: block;
-  position:fixed;
-  top:0;
-  left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: $theBG;
   font-family: "Rubik", sans-serif;
   overflow: hidden;
   margin: 0px;
-  box-shadow:3px 4px 50px 5px rgba(0,0,0,.5);
+  box-shadow: 3px 4px 50px 5px rgba(0, 0, 0, 0.5);
   > * {
     display: inline-block;
   }
@@ -38,8 +46,8 @@ body {
     background-image: url(https://lukeskywalk3r.github.io/bwg-apexmedia/res/logo_light.png);
     height: $header-height;
     width: $header-height;
-    background-repeat: no-repeat;
-    background-size: contain;
+    @include prefix(background-repeat, no-repeat);
+    @include prefix(background-size, contain);
   }
   #headline {
     float: left;
