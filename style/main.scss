@@ -2,44 +2,69 @@
 ---
 
 $header-height: 120px;
+$header-ofset:$header-height*.8;
 $theOrangeColor: #ff9526;
 $theBG: #14829a;
+$text-grey-ness: 256;
+$theFontCol: darken(rgb($text-grey-ness, $text-grey-ness, $text-grey-ness), 20%);
 
 @mixin prefix($property, $parameters...) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
     #{$prefix}#{$property}: $parameters;
   }
 }
+%anim{
+      transition:all .5s ease-in-out;
+}
 
 html,
 body {
   font-family: "Quicksand", sans-serif;
   font-weight: 100;
-  $text-grey-ness: 256;
-  color: darken(rgb($text-grey-ness, $text-grey-ness, $text-grey-ness), 20%);
+color: $theFontCol;
   margin: 0px;
   padding: 0px;
   background: lightgray;
 }
 
 #mainContent {
-  margin: 0 25px;
-  padding: ($header-height + 5px) 8px 5px;
+  @extend %anim;
+  margin: 0 25px 25px;
+  padding: ($header-height - $header-ofset + 5px) 8px 5px;
   background: $theBG;
 }
 #header {
   display: block;
   position: fixed;
-  top: 0;
+  top: -$header-ofset;
   left: 0;
   width: 100%;
-  background-color: $theBG;
+  background-color: darken($theBG,10%);
   font-family: "Rubik", sans-serif;
   overflow: hidden;
   margin: 0px;
   box-shadow: 3px 4px 50px 5px rgba(0, 0, 0, 0.5);
+  *{
+      opacity:0;
+    }
+  &:hover{
+    background-color: $theBG;
+    top:0;
+    box-shadow: 30px 40px 200px 70px rgba(0, 0, 0, 0.7); //very eXtreme - for demonstration only
+    *{
+      opacity:1;
+    }
+  }
+  &,& *,&:hover,&:hover~#mainContent{
+@extend %anim;
+    
+  }
   > * {
     display: inline-block;
+  }
+  &:hover~#mainContent{
+    background:darken($theBG,12%);
+    color:darken($theFontCol,12%);
   }
   #logo {
     float: left;
@@ -50,6 +75,7 @@ body {
     @include prefix(background-size, contain);
   }
   #headline {
+    @include prefix(cursor,default);
     float: left;
     padding: 0px;
     margin: 0px;
